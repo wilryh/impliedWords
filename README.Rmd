@@ -18,7 +18,7 @@ library(devtools)
 install_github("wilryh/impliedWords", dependencies=TRUE)
 
 library(stm)
-library(parrot)
+library(impliedWords)
 
 processed <- textProcessor(
     input_data$text,
