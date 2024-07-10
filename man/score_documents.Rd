@@ -7,11 +7,11 @@
 score_documents_pcs(scores, max_dimensions = NULL)
 }
 \arguments{
-\item{scores}{A list from output of \code{scale_text}. meta must be specified
+\item{scores}{A list from output of \code{scale_text}. \code{meta} must be specified
 in \code{scale_text_pcs} for this function to work.}
 
 \item{max_dimensions}{An integer scalar. How many dimensions of scaled text to
-score. Defaults to max_dimensions specified in \code{scale_text}}
+score. Defaults to \code{max_dimensions} specified in \code{scale_text}}
 }
 \description{
 \code{score_documents} uses word scores to assign document scores

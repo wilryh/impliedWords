@@ -7,10 +7,11 @@
 doc_to_dtm(out, binary = TRUE)
 }
 \arguments{
-\item{out}{A list of the output from stm \code{prepDocuments}.}
+\item{out}{A list of the output from R package \code{stm}'s
+\code{prepDocuments}.}
 
-\item{binary}{A logical scalar. If TRUE (default) then only count one occurrence of a word in a
-document.}
+\item{binary}{A logical scalar. If TRUE (default) then only count one
+occurrence of a word in a document.}
 }
 \description{
 \code{doc_to_dtm} converts list of documents from stm package

@@ -8,19 +8,21 @@
 #' \code{scale_text_pcs} runs implied words scaling
 #'
 #' @param dtm A sparseMatrix. Rows are documents and columns are vocabulary.
-#' @param meta data.frame. Must line up with dtm etc. This is included only to
+#' @param meta data.frame. Must line up with \code{dtm} etc. This is included only to
 #' keep track of any accompanying variables. It is unaltered by the function.
 #' @param cutoff_exponent An integer scalar. Used to determine the number of
 #' 'common words'. Defaults to 2 (as in paper).
-#' @param dtm_vocab A character vector. Provide vocabulary for columns of dtm if
+#' @param dtm_vocab A character vector. Provide vocabulary for columns of \code{dtm} if
 #' missing in column names.
 #' @param verbose A logical scalar. Print progress of the function.
-#' @param holdout A logical or numeric vector. A logical or numeric vector
-#' indicating which rows to exclude from training.
+#' @param holdout A logical vector, numeric vector, or character scalar. A
+#' logical or numeric vector indicates which rows to exclude from training. A
+#' character scalar provides the name of a column in \code{meta}.
 #' @param max_dimensions An integer scalar. The number of principal components
 #' to calculate.
-#' @param weights A numeric vector. Responses weights. Must be equal to the
-#' number of rows in dtm.
+#' @param weights A numeric vector or character scalar. Responses weights.
+#' If a numeric vector is provided, it must be equal to the number of rows in
+#' \code{dtm}. A character scalar provides the name of a column in \code{meta}.
 #' @param project_rare_words A logical scalar. Whether to project rare words not (fully)
 #' used in the scaling process.
 #'
@@ -82,7 +84,17 @@ scale_text_pcs <- function(
   }
 
   dtm_orig <- dtm
+
+  if (!is.null(weights)) {
+    if (inherits(weights, "character") & length(weights)==1 & !is.null(meta)) {
+      weights <- meta[[weights]]
+    }
+  }
+
   if (!is.null(holdout)) {
+    if (inherits(holdout, "character") & length(holdout)==1 & !is.null(meta)) {
+      holdout <- meta[[holdout]]
+    }
     if (!inherits(holdout, "logical")) {
       holdout <- as.numeric(as.character(holdout))
       holdout <- 1:nrow(dtm) %in% holdout

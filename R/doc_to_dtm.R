@@ -8,9 +8,10 @@
 #' \code{doc_to_dtm} converts list of documents from stm package
 #' \code{prepDocuments} function to a sparse term-document matrix.
 #'
-#' @param out A list of the output from stm \code{prepDocuments}.
-#' @param binary A logical scalar. If TRUE (default) then only count one occurrence of a word in a
-#' document.
+#' @param out A list of the output from R package \code{stm}'s
+#' \code{prepDocuments}.
+#' @param binary A logical scalar. If TRUE (default) then only count one
+#' occurrence of a word in a document.
 #'
 #' @examples
 #'

@@ -91,7 +91,7 @@ plot_keywords <- function(
       ) +
       ggplot2::xlab(paste("Dimension:",x_dimension - 1)) +
       ggplot2::ylab(paste("Dimension:", y_dimension - 1)) +
-      ggplot2::guides(size=F) + ggplot2::theme_classic() +
+      ggplot2::guides(size="none") + ggplot2::theme_classic() +
       ggplot2::xlim(
         -max(abs(word_scores[above_cutoff,x_dimension])),
         max(abs(word_scores[above_cutoff,x_dimension]))
@@ -115,7 +115,7 @@ plot_keywords <- function(
       ) +
       ggplot2::xlab(paste("Dimension:",x_dimension - 1)) +
       ggplot2::ylab(paste("Dimension:", y_dimension - 1)) +
-      ggplot2::guides(size=F, color=F) + ggplot2::theme_classic() +
+      ggplot2::guides(size="none", color="none") + ggplot2::theme_classic() +
       ggplot2::xlim(
         -max(abs(word_scores[above_cutoff,x_dimension])),
         max(abs(word_scores[above_cutoff,x_dimension]))

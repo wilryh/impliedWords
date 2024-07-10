@@ -19,10 +19,10 @@ scale_text_pcs(
 \arguments{
 \item{dtm}{A sparseMatrix. Rows are documents and columns are vocabulary.}
 
-\item{meta}{data.frame. Must line up with dtm etc. This is included only to
+\item{meta}{data.frame. Must line up with \code{dtm} etc. This is included only to
 keep track of any accompanying variables. It is unaltered by the function.}
 
-\item{dtm_vocab}{A character vector. Provide vocabulary for columns of dtm if
+\item{dtm_vocab}{A character vector. Provide vocabulary for columns of \code{dtm} if
 missing in column names.}
 
 \item{cutoff_exponent}{An integer scalar. Used to determine the number of
@@ -30,14 +30,16 @@ missing in column names.}
 
 \item{verbose}{A logical scalar. Print progress of the function.}
 
-\item{holdout}{A logical or numeric vector. A logical or numeric vector
-indicating which rows to exclude from training.}
+\item{holdout}{A logical vector, numeric vector, or character scalar. A
+logical or numeric vector indicates which rows to exclude from training. A
+character scalar provides the name of a column in \code{meta}.}
 
 \item{max_dimensions}{An integer scalar. The number of principal components
 to calculate.}
 
-\item{weights}{A numeric vector. Responses weights. Must be equal to the
-number of rows in dtm.}
+\item{weights}{A numeric vector or character scalar. Responses weights.
+If a numeric vector is provided, it must be equal to the number of rows in
+\code{dtm}. A character scalar provides the name of a column in \code{meta}.}
 
 \item{project_rare_words}{A logical scalar. Whether to project rare words not (fully)
 used in the scaling process.}

@@ -7,10 +7,10 @@
 #' @description
 #' \code{score_documents} uses word scores to assign document scores
 #'
-#' @param scores A list from output of \code{scale_text}. meta must be specified
+#' @param scores A list from output of \code{scale_text}. \code{meta} must be specified
 #' in \code{scale_text_pcs} for this function to work.
 #' @param max_dimensions An integer scalar. How many dimensions of scaled text to
-#' score. Defaults to max_dimensions specified in \code{scale_text}
+#' score. Defaults to \code{max_dimensions} specified in \code{scale_text}
 #'
 #' @examples
 #'
