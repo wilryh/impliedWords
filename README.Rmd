@@ -92,7 +92,6 @@ document_scores <- score_documents_pcs(
 )
 ```
 
-
 ```{r example_scratch, eval=F, include=F}
 scores <- scale_text_pcs(
   meta=out$meta,

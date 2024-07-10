@@ -61,7 +61,7 @@ get_keywords <- function(
           n = n_words
         )
       )
-      names(keywords) <- c("pivots (-)","(+) pivots")
+      names(keywords) <- c("keywords (-)","(+) keywords")
     } else {
       ordered_words_orig <- scores$vocab[
         order(
@@ -81,7 +81,7 @@ get_keywords <- function(
           n = n_words
         )
       )
-      names(keywords) <- c("pivots (-)","(+) pivots")
+      names(keywords) <- c("keywords (-)","(+) keywords")
     }
 
     if (capture_output) {

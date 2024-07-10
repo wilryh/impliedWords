@@ -63,18 +63,18 @@ get_keywords(
 )
 ```
 
-|  pivots (-)  | (+) pivots |
-|:------------:|:----------:|
-|   abortion   |   people   |
-|    rights    |    rich    |
-|    stance    |    poor    |
-|     gun      |   class    |
-|     pro      |  working   |
-|    views     |    get     |
-|    issues    |    help    |
-| conservative |   always   |
-|   marriage   |    man     |
-|     gay      |   middle   |
+| keywords (-) | (+) keywords |
+|:------------:|:------------:|
+|   abortion   |    people    |
+|    rights    |     rich     |
+|    stance    |     poor     |
+|     gun      |    class     |
+|     pro      |   working    |
+|    views     |     get      |
+|    issues    |     help     |
+| conservative |    always    |
+|   marriage   |     man      |
+|     gay      |    middle    |
 
 Dimension 1 keywords
 
