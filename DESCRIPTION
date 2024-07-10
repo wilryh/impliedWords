@@ -1,0 +1,24 @@
+Package: impliedWords
+Type: Package
+Title: Implementation of the 'Implied Word' Method (Hobbs and Green)
+Version: 1.0.0
+Author: Will Hobbs
+Maintainer: Will Hobbs <william.r.hobbs@gmail.com>
+Description: This package implies the method described in "Categorizing topics 
+    versus inferring attitudes -- a theory and method for analyzing open-ended 
+    survey responses."
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+    Matrix,
+    RSpectra,
+    methods
+Suggests:
+    stm,
+    quanteda,
+    reshape2,
+    knitr,
+    ggplot2,
+    gridExtra
+RoxygenNote: 7.3.2

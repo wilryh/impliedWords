@@ -1,0 +1,4 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("methods", "as")
+importFrom("stats", "kmeans", "quantile")
+importFrom("utils", "head")
