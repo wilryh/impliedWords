@@ -98,3 +98,16 @@ document_scores <- score_documents_pcs(
   scores=scores
 )
 ```
+
+### label dimensions with AI labels + embeddings
+
+Label embedding scoring for implied word dimensions will be implemented
+soon. Please reach out if you hope to use it sooner than later.
+
+<figure>
+<img
+src="man/figures/theory_of_openended_responses_article_figure_6_top.png"
+alt="Article Figure 6 (top panels)" />
+<figcaption aria-hidden="true">Article Figure 6 (top
+panels)</figcaption>
+</figure>
