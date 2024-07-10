@@ -9,7 +9,7 @@ Description: This package implies the method described in "Categorizing topics
     survey responses."
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Imports:
     Matrix,
     RSpectra,
