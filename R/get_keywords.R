@@ -2,7 +2,7 @@
 #' @export
 #'
 #' @title
-#' List keywords from \code{scale_text}
+#' List keywords from \code{scale_text_pcs}
 #'
 #' @description
 #' \code{get_keywords} lists keywords for each scaled text dimension.
@@ -26,7 +26,7 @@
 #' get_keywords(scores, n_dimensions=3, n_words=15)
 #' }
 #'
-#' @seealso \code{\link{plot_keywords}},
+#' @seealso \code{\link{scale_text_pcs}}, \code{\link{plot_keywords}},
 #' \code{\link{score_documents_pcs}}, \code{\link{doc_to_dtm}}
 #'
 
