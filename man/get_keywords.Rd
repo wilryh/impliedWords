@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_keywords.R
 \name{get_keywords}
 \alias{get_keywords}
-\title{List keywords from \code{scale_text}}
+\title{List keywords from \code{scale_text_pcs}}
 \usage{
 get_keywords(
   scores,
@@ -41,6 +41,6 @@ get_keywords(scores, n_dimensions=3, n_words=15)
 
 }
 \seealso{
-\code{\link{plot_keywords}},
+\code{\link{scale_text_pcs}}, \code{\link{plot_keywords}},
 \code{\link{score_documents_pcs}}, \code{\link{doc_to_dtm}}
 }

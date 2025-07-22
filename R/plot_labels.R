@@ -1,4 +1,4 @@
-#' @rdname get_labels
+#' @rdname plot_labels
 #' @export
 #'
 #' @title
@@ -8,8 +8,8 @@
 #' \code{plot_labels} lists labels for each scaled text dimension.
 #'
 #' @param scores List from output of \code{scale_text}.
-#' @param dimension Integer scalar or vector. How many/which dimensions to
-#' print.
+#' @param dimension Integer scalar or vector. Which dimension to
+#' plot.
 #'
 #' @examples
 #' \dontrun{

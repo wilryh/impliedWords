@@ -13,7 +13,11 @@ scale_text_pcs(
   holdout = NULL,
   max_dimensions = 4,
   weights = NULL,
-  project_rare_words = TRUE
+  project_rare_words = TRUE,
+  embed_dimensions = FALSE,
+  embeddings = NULL,
+  max_embed_dimensions = NULL,
+  label_embeddings = NULL
 )
 }
 \arguments{
@@ -43,6 +47,17 @@ If a numeric vector is provided, it must be equal to the number of rows in
 
 \item{project_rare_words}{A logical scalar. Whether to project rare words not (fully)
 used in the scaling process.}
+
+\item{embed_dimensions}{A logical scalar. Whether to embed implied words output.}
+
+\item{embeddings}{A character scalar. The name of the nested embeddings column in meta.
+Required if embed_dimensions = TRUE.}
+
+\item{max_embed_dimensions}{An integer scalar. The number of dimensions to embed.
+Must be less than or equal to max_dimensions - 1.}
+
+\item{label_embeddings}{A matrix. The rows of the matrix are labels (with rownames
+for labels) and the columns are embeddings.}
 }
 \description{
 \code{scale_text_pcs} runs implied words scaling

@@ -10,7 +10,7 @@
 #' @param scores List from output of \code{scale_text}.
 #' @param n_dimensions Integer scalar or vector. How many/which dimensions to
 #' print.
-#' @param n_labels
+#' @param n_labels Integer scale. How many labels to print.
 #' @param capture_output A logical scalar. Whether to return the output as list
 #' of data frames rather than print to console.
 #'
