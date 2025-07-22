@@ -101,13 +101,60 @@ document_scores <- score_documents_pcs(
 
 ### label dimensions with AI labels + embeddings
 
-Label embedding scoring for implied word dimensions will be implemented
-soon. Please reach out if you hope to use it sooner than later.
+This code is run on a 20% sample to reduce file size for github.
 
-<figure>
-<img
-src="man/figures/theory_of_openended_responses_article_figure_6_top.png"
-alt="Article Figure 6 (top panels)" />
-<figcaption aria-hidden="true">Article Figure 6 (top
-panels)</figcaption>
-</figure>
+``` r
+library(tidyverse)
+library(gridExtra)
+library(ggwordcloud)
+
+
+data(likes_dislikes_dtm_sampled)
+data(likes_dislikes_meta_with_embeddings_sampled)
+data(likes_dislikes_label_embeddings)
+
+scores <- scale_text_pcs(
+  dtm=likes_dislikes_dtm_sampled,
+  meta=likes_dislikes_meta_with_embeddings_sampled,
+  weights="weight", # weight and holdout are columns in likes_dislikes_meta
+  holdout="holdout",
+  max_dimensions = 10,
+  embed_dimensions = T,
+  embeddings = "embeddings",
+  label_embeddings = likes_dislikes_label_embeddings
+)
+#> Weighting..
+#> Counting word co-occurrences..
+#> Transforming document-term matrix..
+#> Scaling..
+#> Embedding..
+
+get_keywords(
+  scores,
+  n_dimensions=1,
+  n_words = 10
+)
+#> 
+#> 
+#> Table: Dimension 1 keywords
+#> 
+#>  keywords (-)    (+) keywords 
+#> --------------  --------------
+#>      rich          abortion   
+#>     people          rights    
+#>      poor           views     
+#>     class        conservative 
+#>      get             pro      
+#>    working           gun      
+#>      help           issues    
+#>     office       immigration  
+#>     always          values    
+#>      man           control
+
+plot_labels(
+  scores,
+  dimension=1
+)
+```
+
+<img src="man/figures/README-embeddings-1.png" width="100%" />

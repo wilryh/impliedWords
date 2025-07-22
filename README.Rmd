@@ -94,26 +94,37 @@ document_scores <- score_documents_pcs(
 
 ### label dimensions with AI labels + embeddings
 
-Label embedding scoring for implied word dimensions will be implemented soon. Please reach out if you hope to use it sooner than later.
+This code is run on a 20% sample to reduce file size for github.
 
-![Article Figure 6 (top panels)](man/figures/theory_of_openended_responses_article_figure_6_top.png)
+```{r embeddings, warning=F, message=F}
+library(tidyverse)
+library(gridExtra)
+library(ggwordcloud)
 
-```{r example_scratch, eval=F, include=F}
+
+data(likes_dislikes_dtm_sampled)
+data(likes_dislikes_meta_with_embeddings_sampled)
+data(likes_dislikes_label_embeddings)
+
 scores <- scale_text_pcs(
-  meta=out$meta,
-  dtm=dtm
-)
-
-document_scores <- score_documents_pcs(
-  scores=scores
+  dtm=likes_dislikes_dtm_sampled,
+  meta=likes_dislikes_meta_with_embeddings_sampled,
+  weights="weight", # weight and holdout are columns in likes_dislikes_meta
+  holdout="holdout",
+  max_dimensions = 10,
+  embed_dimensions = T,
+  embeddings = "embeddings",
+  label_embeddings = likes_dislikes_label_embeddings
 )
 
 get_keywords(
-  scores, 
-  n_dimensions=2
+  scores,
+  n_dimensions=1,
+  n_words = 10
 )
 
-plot_keywords(
-  scores, x_dimension=1, y_dimension=2, q_cutoff=0.9
+plot_labels(
+  scores,
+  dimension=1
 )
 ```
